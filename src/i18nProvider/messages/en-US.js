@@ -1,7 +1,9 @@
 import { LOCALES } from '../constants';
 
-export default {
+const EN={
   [LOCALES.ENGLISH]: {
-    'hello': 'Hello',
+    '您好': 'Hello',
+    '北京': 'Beijing',
   },
 };
+export default EN

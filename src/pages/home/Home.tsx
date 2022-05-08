@@ -45,7 +45,8 @@ export default function Home() {
         <p style={{ color: `${state.colorValue}` }}>
           Context数据:{JSON.stringify(state)}
         </p>
-        <h2>{translate("hello")}</h2>
+        <h2>{translate("您好")}</h2>
+        <h2>{translate("北京")}</h2>
       </div>
       <div className={styles.homePage}>主页HOMEPAGE</div>
       <div className={styles.buttonArea}>

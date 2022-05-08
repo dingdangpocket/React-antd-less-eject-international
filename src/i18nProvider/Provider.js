@@ -26,7 +26,7 @@ Provider.propTypes = {
 };
 
 Provider.defaultProps = {
-  locale: LOCALES.ENGLISH,
+  locale: LOCALES.CHINESE,
 };
 
 export default Provider;

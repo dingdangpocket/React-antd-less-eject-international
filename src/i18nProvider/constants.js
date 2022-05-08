@@ -1,4 +1,4 @@
 export const LOCALES = {
   ENGLISH: 'en-us',
-  CHINESE: 'ch-CN',
+  CHINESE: 'zh-CN',
 };

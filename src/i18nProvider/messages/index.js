@@ -1,7 +1,7 @@
-import en from './en-US';
-import ch from './ch-CN';
-
-export default {
-  ...en,
-  ...ch,
+import EN from "./en-US";
+import ZH from "./zh-CN";
+const messages = {
+  ...EN,
+  ...ZH,
 };
+export default messages;

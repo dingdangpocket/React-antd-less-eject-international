@@ -21,7 +21,7 @@ const App = (props: Props) => {
       console.log("请求结果", user);
     })();
   }, []);
-  const [locale, setLocale] = useState(LOCALES.ENGLISH);
+  const [locale, setLocale] = useState(LOCALES.CHINESE);
   return (
     <>
       <I18nPropvider locale={locale}>
@@ -52,7 +52,8 @@ const App = (props: Props) => {
           />
           <Route path="*" element={<p>ERROR-PAGE</p>} />
         </Routes>
-        <h2>{translate("hello")}</h2>
+        <h2>{translate("您好")}</h2>
+        <h2>{translate("北京")}</h2>
         <button
           style={{
             width: "430px",
