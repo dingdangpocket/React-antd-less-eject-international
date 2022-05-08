@@ -21,8 +21,8 @@ const App = (props: Props) => {
     <>
       <I18nPropvider locale={locale}>
         <RootRouter></RootRouter>
-        <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
-        <button onClick={() => setLocale(LOCALES.CHINESE)}>Chinese</button>
+        {/* <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
+        <button onClick={() => setLocale(LOCALES.CHINESE)}>Chinese</button> */}
       </I18nPropvider>
     </>
   );

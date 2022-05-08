@@ -1,5 +1,6 @@
 import Description from "@/pages/description/Description";
 import Home from "@/pages/home/Home";
+import Login from "@/pages/login/Login";
 import Profile from "@/pages/profile/Profile";
 import System from "@/pages/system/System";
 import { useState } from "react";
@@ -9,7 +10,7 @@ export default function RootRouter() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login/>}/>
         <Route path="/home/*" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/description:id" element={<Description />} />
@@ -35,7 +36,7 @@ export default function RootRouter() {
         />
         <Route path="*" element={<p>ERROR-PAGE</p>} />
       </Routes>
-      <button
+      {/* <button
         style={{
           width: "430px",
           height: "40px",
@@ -45,7 +46,7 @@ export default function RootRouter() {
         onClick={() => setIsAdmin(true)}
       >
         申请访问权限
-      </button>
+      </button> */}
     </>
   );
 }
