@@ -5,9 +5,10 @@ import {
   NotificationOutlined,
 } from "@ant-design/icons";
 import styles from "./Home.module.less";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftSideRouter from "@/router/home/leftSideRouter";
+import { I18nPropvider, LOCALES } from "@/i18nProvider";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -70,61 +71,66 @@ export default function Home() {
     }
     console.log(key);
   };
+  const [locale, setLocale] = useState(LOCALES.CHINESE);
   return (
     <>
-      <Layout className={styles.main}>
-        <Header className="header">
-          <div className="logo" />
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={["1"]}
-            items={items1}
-          />
-        </Header>
-        <Layout>
-          <Sider width={200} className="site-layout-background">
+      <I18nPropvider locale={locale}>
+        <Layout className={styles.main}>
+          <Header className="header">
+            <div className="logo" />
             <Menu
-              mode="inline"
-              defaultSelectedKeys={["1-1"]}
-              defaultOpenKeys={["1"]}
-              style={{
-                height: "100%",
-                borderRight: 0,
-              }}
-              onClick={({ key, keyPath, domEvent }) =>
-                checkHandle({ key, keyPath, domEvent })
-              }
-              items={items2}
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={["1"]}
+              items={items1}
             />
-          </Sider>
-          <Layout
-            style={{
-              padding: "0 24px 24px",
-            }}
-          >
-            <Breadcrumb
+          </Header>
+          <Layout>
+            <Sider width={200} className="site-layout-background">
+              <Menu
+                mode="inline"
+                defaultSelectedKeys={["1-1"]}
+                defaultOpenKeys={["1"]}
+                style={{
+                  height: "100%",
+                  borderRight: 0,
+                }}
+                onClick={({ key, keyPath, domEvent }) =>
+                  checkHandle({ key, keyPath, domEvent })
+                }
+                items={items2}
+              />
+            </Sider>
+            <Layout
               style={{
-                margin: "16px 0",
+                padding: "0 24px 24px",
               }}
             >
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
-            <Content
-              className="site-layout-background"
-              style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-              }}
-            >
-              <LeftSideRouter></LeftSideRouter>
-            </Content>
+              <Breadcrumb
+                style={{
+                  margin: "16px 0",
+                }}
+              >
+                <Breadcrumb.Item>Home</Breadcrumb.Item>
+                <Breadcrumb.Item>List</Breadcrumb.Item>
+                <Breadcrumb.Item>App</Breadcrumb.Item>
+              </Breadcrumb>
+              <Content
+                className="site-layout-background"
+                style={{
+                  padding: 24,
+                  margin: 0,
+                  minHeight: 280,
+                }}
+              >
+                <LeftSideRouter></LeftSideRouter>
+              </Content>
+            </Layout>
           </Layout>
         </Layout>
-      </Layout>
+      </I18nPropvider>
+      <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
+      <button onClick={() => setLocale(LOCALES.CHINESE)}>Chinese</button>
     </>
   );
 }
