@@ -12,24 +12,51 @@ export default function Home() {
     key,
     label: `nav ${key}`,
   }));
-  
-  const items2 = [{title:"用户",icon:UserOutlined},{title:"电脑",icon:LaptopOutlined} ,{title:"通知",icon: NotificationOutlined}].map(
-    (item, index) => {
-      const key = String(index + 1);
-      return {
-        key: `sub${key}`,
-        icon: React.createElement(item.icon),
-        label: `${item.title}`,
-        children: new Array(5).fill(null).map((_, j) => {
-          const subKey = index * 5 + j + 1;
-          return {
-            key: subKey,
-            label: `option${subKey}`,
-          };
-        }),
-      };
-    }
-  );
+
+  const items2 = [
+    {
+      title: "用户管理",
+      icon: UserOutlined,
+      key: "1",
+      children: [
+        { title: "用户信息", key: "1-1" },
+        { title: "用户资料", key: "1-2" },
+      ],
+    },
+    {
+      title: "电脑管理",
+      key: "2",
+      icon: LaptopOutlined,
+      children: [
+        { title: "电脑信息", key: "2-1" },
+        { title: "电脑资料", key: "2-2" },
+      ],
+    },
+    {
+      title: "通知管理",
+      key: "3",
+      icon: NotificationOutlined,
+      children: [
+        { title: "通知信息", key: "3-1" },
+        { title: "通知资料", key: "3-2" },
+      ],
+    },
+  ].map((item) => {
+    return {
+      key: item.key,
+      icon: React.createElement(item.icon),
+      label: item.title,
+      children: item.children?.map((child) => {
+        return {
+          key: child.key,
+          label: child.title,
+        };
+      }),
+    };
+  });
+  const checkHandle = ({ item, key, keyPath, domEvent }: any) => {
+    console.log(key);
+  };
   return (
     <>
       <Layout className={styles.main}>
@@ -52,6 +79,9 @@ export default function Home() {
                 height: "100%",
                 borderRight: 0,
               }}
+              onClick={({ item, key, keyPath, domEvent }) =>
+                checkHandle({ item, key, keyPath, domEvent })
+              }
               items={items2}
             />
           </Sider>
