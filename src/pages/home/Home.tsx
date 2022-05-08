@@ -9,11 +9,12 @@ import UserInfo from "@/components/UserInfo";
 import { useDispatch, useSelector } from "react-redux";
 import translate from "@/i18nProvider/translate";
 import {Button} from "antd"
+import customStyle from "./customStyle";
 
 export default function Home() {
   const { state, dispatch } = useContext(ContentContext);
   let navigate = useNavigate();
-
+   
   const count = useSelector<any>((state) => {
     console.log("状态机数据", state);
     return state.counts;
@@ -71,7 +72,7 @@ export default function Home() {
           关闭二级路由
         </button>
       </div>
-      <Button style={{backgroundColor:"red",height:100,width:200}}type="primary">ANTD</Button>
+      <Button style={customStyle.btn} disabled={true}  type="primary">ANTD</Button>
       <UserInfo id={1} name={"dingdang"} age={18} adress={"成都"} />
       <Routes>
         <Route path="password" element={<Password />} />
