@@ -8,6 +8,7 @@ import styles from "./Home.module.scss";
 import UserInfo from "@/components/UserInfo";
 import { useDispatch, useSelector } from "react-redux";
 import translate from "@/i18nProvider/translate";
+import {Button} from "antd"
 
 export default function Home() {
   const { state, dispatch } = useContext(ContentContext);
@@ -70,6 +71,7 @@ export default function Home() {
           关闭二级路由
         </button>
       </div>
+      <Button type="primary">ANTD</Button>
       <UserInfo id={1} name={"dingdang"} age={18} adress={"成都"} />
       <Routes>
         <Route path="password" element={<Password />} />
