@@ -15,10 +15,9 @@ export default function Home() {
 
   const count = useSelector<any>((state) => {
     console.log("状态机数据", state);
-    return state.counts
+    return state.counts;
   });
   console.log(count);
-  
 
   const goDescription = () => {
     navigate("/description" + 2190867637637);
@@ -49,6 +48,8 @@ export default function Home() {
         <h2>{translate("北京")}</h2>
       </div>
       <div className={styles.homePage}>主页HOMEPAGE</div>
+      <h2>{translate("您好")}</h2>
+      <h2>{translate("北京")}</h2>
       <div className={styles.buttonArea}>
         <button className={styles.btn} onClick={() => changeToRed()}>
           dispatchContext-changeToRed
