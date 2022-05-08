@@ -100,7 +100,15 @@ module.exports = function (proxy, allowedHost) {
       index: paths.publicUrlOrPath,
     },
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
-    proxy,
+    proxy: {
+      "/api": {
+        target: "https://jsonplaceholder.typicode.com",
+        host:'jsonplaceholder.typicode.com',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: { "^/api": "" },
+      },
+    },
     onBeforeSetupMiddleware(devServer) {
       // Keep `evalSourceMapMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect

@@ -2,8 +2,8 @@ import axios from "axios"
 const user = {
     getUser(){
         return axios({
-            method:"POST",
-            url:"/getSingleJoke?sid=28654780",
+            method:"GET",
+            url:"/api/todos/1",
             headers: {
                 'Content-Type': 'application/json'
             },

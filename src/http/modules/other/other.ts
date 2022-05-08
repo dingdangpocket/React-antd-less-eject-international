@@ -2,8 +2,8 @@ import axios from "axios"
 const other = {
     getData(){
         return axios({
-            method:"POST",
-            url:"/api/v1/bpi/currentprice.json",
+            method:"GET",
+            url:"/api/todos/1",
             headers: {
                 'Content-Type': 'application/json'
             },

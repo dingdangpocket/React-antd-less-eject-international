@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import axios from "axios";
+// import axios from "axios";
 import "./http/axios";
 import { HashRouter as Router } from "react-router-dom";
 import { ContextProvider } from "./context/ContextProvider";
