@@ -1,7 +1,7 @@
 import { LOCALES } from '../constants';
 
 export default {
-  [LOCALES.ENGLISH]: {
-    'hello': 'Hello',
+  [LOCALES.CHINESE]: {
+    'hello': '您好',
   },
 };

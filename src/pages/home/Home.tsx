@@ -7,6 +7,7 @@ import { ContentContext } from "../../context/ContextProvider";
 import styles from "./Home.module.scss";
 import UserInfo from "@/components/UserInfo";
 import { useDispatch, useSelector } from "react-redux";
+import translate from "@/i18nProvider/translate";
 
 export default function Home() {
   const { state, dispatch } = useContext(ContentContext);
@@ -44,6 +45,7 @@ export default function Home() {
         <p style={{ color: `${state.colorValue}` }}>
           Context数据:{JSON.stringify(state)}
         </p>
+        <h2>{translate("hello")}</h2>
       </div>
       <div className={styles.homePage}>主页HOMEPAGE</div>
       <div className={styles.buttonArea}>

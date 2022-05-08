@@ -66,8 +66,7 @@ const App = (props: Props) => {
         </button>
 
         <button onClick={() => setLocale(LOCALES.ENGLISH)}>English</button>
-        <button onClick={() => setLocale(LOCALES.FRENCH)}>French</button>
-        <button onClick={() => setLocale(LOCALES.GERMAN)}>German</button>
+        <button onClick={() => setLocale(LOCALES.CHINESE)}>Chinese</button>
       </I18nPropvider>
     </>
   );
