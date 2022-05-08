@@ -6,7 +6,11 @@ import {
 } from "@ant-design/icons";
 import styles from "./Home.module.less";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import LeftSideRouter from "@/router/home/leftSideRouter";
+
 export default function Home() {
+  let navigate = useNavigate();
   const { Header, Content, Sider } = Layout;
   const items1 = ["1", "2", "3"].map((key) => ({
     key,
@@ -19,7 +23,7 @@ export default function Home() {
       icon: UserOutlined,
       key: "1",
       children: [
-        { title: "用户信息", key: "1-1" },
+        { title: "用户密码", key: "1-1" },
         { title: "用户资料", key: "1-2" },
       ],
     },
@@ -55,6 +59,12 @@ export default function Home() {
     };
   });
   const checkHandle = ({ item, key, keyPath, domEvent }: any) => {
+    if (key === "1-1") {
+      navigate("/home/password");
+    }
+    if (key === "1-2") {
+      navigate("/home/userfile");
+    }
     console.log(key);
   };
   return (
@@ -107,7 +117,7 @@ export default function Home() {
                 minHeight: 280,
               }}
             >
-              Content
+              <LeftSideRouter></LeftSideRouter>
             </Content>
           </Layout>
         </Layout>
