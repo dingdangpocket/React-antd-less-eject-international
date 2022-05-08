@@ -1,6 +1,7 @@
 import { UserInfoType } from "@/model/type/UserInfo";
 import styles from "./UserInfo.module.less";
 
+
 export default function UserInfo(props: UserInfoType) {
   const { id, name, age, adress } = props;
   return (
