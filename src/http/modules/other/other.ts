@@ -3,7 +3,7 @@ const other = {
     getData(){
         return axios({
             method:"POST",
-            url:"/getSingleJoke?sid=28654780",
+            url:"/api/v1/bpi/currentprice.json",
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -11,3 +11,4 @@ const other = {
     },
 }
 export default other;
+
