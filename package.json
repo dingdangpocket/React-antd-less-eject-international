@@ -39,6 +39,8 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
+    "less": "^4.1.2",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "npm": "^8.9.0",
     "postcss": "^8.4.4",
@@ -158,6 +160,7 @@
   },
   "devDependencies": {
     "@types/redux-logger": "^3.0.9",
+    "babel-plugin-import": "^1.13.5",
     "sass": "^1.51.0"
   }
 }

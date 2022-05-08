@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 // import axios from "axios";
-import "antd/dist/antd.css"
+// import "antd/dist/antd.css"
 import "./http/axios";
 import { HashRouter as Router } from "react-router-dom";
 import { ContextProvider } from "./context/ContextProvider";

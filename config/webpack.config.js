@@ -71,6 +71,9 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
+
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === "true") {
@@ -183,6 +186,29 @@ module.exports = function (webpackEnv) {
         }
       );
     }
+    if (preProcessor && preProcessor === 'less-loader') {
+      loaders.push(
+        {
+          loader: require.resolve('resolve-url-loader'),
+          options: {
+            sourceMap: isEnvProduction && shouldUseSourceMap
+          }
+        },
+        {
+          loader: require.resolve(preProcessor),
+          options: {
+            sourceMap: true,
+            javascriptEnabled: true,
+            modifyVars: {
+              'primary-color': 'blue',
+              'link-color': '#ff4757',
+              'border-radius-base': '2px',
+            }
+          }
+        }
+      );
+    }
+    //custom antd theme...
     return loaders;
   };
 
@@ -423,6 +449,14 @@ module.exports = function (webpackEnv) {
                 ],
 
                 plugins: [
+                  [
+                    require.resolve("babel-plugin-import"),
+                    {
+                      libraryName: "antd",
+                      libraryDirectory: "es",
+                      style: true,
+                    },
+                  ],
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve("react-refresh/babel"),
@@ -543,6 +577,31 @@ module.exports = function (webpackEnv) {
                   },
                 },
                 "sass-loader"
+              ),
+            },
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                },
+                'less-loader'
+              ),
+              sideEffects: true,
+            },
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules: {
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
+                },
+                'less-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
