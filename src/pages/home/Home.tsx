@@ -5,7 +5,7 @@ import {
   NotificationOutlined,
 } from "@ant-design/icons";
 import styles from "./Home.module.less";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftSideRouter from "@/router/home/leftSideRouter";
 
@@ -58,6 +58,9 @@ export default function Home() {
       }),
     };
   });
+  useEffect(() => {
+    navigate("/home/password");
+  }, []);
   const checkHandle = ({ item, key, keyPath, domEvent }: any) => {
     if (key === "1-1") {
       navigate("/home/password");
@@ -89,8 +92,8 @@ export default function Home() {
                 height: "100%",
                 borderRight: 0,
               }}
-              onClick={({key, keyPath, domEvent }) =>
-                checkHandle({key, keyPath, domEvent })
+              onClick={({ key, keyPath, domEvent }) =>
+                checkHandle({ key, keyPath, domEvent })
               }
               items={items2}
             />
