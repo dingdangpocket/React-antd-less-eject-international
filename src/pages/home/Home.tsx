@@ -4,7 +4,7 @@ import Password from "./password/Password";
 import { useNavigate } from "react-router-dom";
 import Side from "@/pages/side/Side";
 import { ContentContext } from "../../context/ContextProvider";
-import styles from "./Home.module.scss";
+import styles from "./Home.module.less";
 import UserInfo from "@/components/UserInfo";
 import { useDispatch, useSelector } from "react-redux";
 import translate from "@/i18nProvider/translate";
@@ -71,7 +71,7 @@ export default function Home() {
           关闭二级路由
         </button>
       </div>
-      <Button type="primary">ANTD</Button>
+      <Button style={{backgroundColor:"red",height:100,width:200}}type="primary">ANTD</Button>
       <UserInfo id={1} name={"dingdang"} age={18} adress={"成都"} />
       <Routes>
         <Route path="password" element={<Password />} />
