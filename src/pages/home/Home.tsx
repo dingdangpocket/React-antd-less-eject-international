@@ -83,14 +83,14 @@ export default function Home() {
           <Sider width={200} className="site-layout-background">
             <Menu
               mode="inline"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
+              defaultSelectedKeys={["1-1"]}
+              defaultOpenKeys={["1"]}
               style={{
                 height: "100%",
                 borderRight: 0,
               }}
-              onClick={({ item, key, keyPath, domEvent }) =>
-                checkHandle({ item, key, keyPath, domEvent })
+              onClick={({key, keyPath, domEvent }) =>
+                checkHandle({key, keyPath, domEvent })
               }
               items={items2}
             />
