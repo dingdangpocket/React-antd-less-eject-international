@@ -2,6 +2,8 @@ import translate from "@/i18nProvider/translate";
 import CommonModelForm from "@/components/commonModelForm/CommonModelForm";
 import { TreeSelect } from "antd";
 import { useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import { leftSideRouterConfig } from "@/routerConfig/routerConfig";
 const { SHOW_PARENT } = TreeSelect;
 export default function UserPassword() {
   const treeData = [
@@ -107,6 +109,18 @@ export default function UserPassword() {
         <p>123</p>
       </CommonModelForm>
       <p> {translate("国际化测试")}</p>
+      <p>
+        <Link to={"/home/password/change"}>修改密码</Link>
+      </p>
+      <Routes>
+        {leftSideRouterConfig.map((item) => {
+          if (item.path === "password/*"&&item.children) {
+            return item.children.map((options)=>{
+              return <Route {...options}></Route>
+            })
+          }
+        })}
+      </Routes>
     </>
   );
 }

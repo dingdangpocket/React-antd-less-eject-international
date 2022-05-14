@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { rootRouterConfig } from "./routerConfig/routerConfig";
+import { rootRouterConfig } from "@/routerConfig/routerConfig";
 export default function RootRouter() {
   return (
     <>
       <Routes>
-        {rootRouterConfig.map((item: any) => {
-          return <Route {...item}></Route>;
+        {rootRouterConfig.map((item: any, index: number) => {
+          delete item.children;
+          return <Route {...item} key={index}></Route>;
         })}
       </Routes>
     </>
