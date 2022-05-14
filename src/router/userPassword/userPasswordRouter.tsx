@@ -13,7 +13,6 @@ export default function UserPasswordRouter() {
   return (
     <Routes>
       {userPasswordRouterConfig.children.map((item: any, index: number) => {
-        console.log(item);
         return <Route path={item.path} element={item.element} key={index} />;
       })}
     </Routes>
