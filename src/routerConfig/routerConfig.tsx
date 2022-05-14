@@ -32,13 +32,3 @@ export const rootRouterConfig = [
   },
   { path: "*", element: <p>ERROR-PAGE</p> },
 ];
-
-// export const leftSideRouterConfig =
-
-// export const descriptionRouterConfig = [
-//   { path: "list", element: <DescriptionList /> },
-// ];
-
-// export const passwordRouterConfig = [
-//   { path: "change", element: <PasswordChange /> },
-// ];
