@@ -69,6 +69,9 @@ export default function Home() {
     if (key === "1-2") {
       navigate("/home/userfile");
     }
+    if (key === "2-1") {
+      navigate(`/home/description${189221}`);
+    }
     console.log(key);
   };
   const [locale, setLocale] = useState(LOCALES.CHINESE);
