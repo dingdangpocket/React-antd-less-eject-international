@@ -9,28 +9,36 @@ import { Navigate } from "react-router-dom";
 
 export const rootRouterConfig = [
   { path: "/", element: <Login /> },
-  { path: "/home/*", element: <Home /> },
-  { path: "*", element: <p>ERROR-PAGE</p> },
-];
-
-export const leftSideRouterConfig = [
-  { path: "/*", element: <Navigate to={"/home/password"} /> },
   {
-    path: "password/*",
-    element: <UserPassword />,
+    path: "/home/*",
+    element: <Home />,
     children: [
-      { path: "change", element: <PasswordChange /> },
-      { path: "delete", element: <PasswordChange /> },
+      { path: "/*", element: <Navigate to={"/home/password"} /> },
+      {
+        path: "password/*",
+        element: <UserPassword />,
+        children: [
+          { path: "change", element: <PasswordChange /> },
+          { path: "delete", element: <PasswordChange /> },
+        ],
+      },
+      { path: "userfile", element: <UserFile /> },
+      {
+        path: "description:id/*",
+        element: <Description />,
+        children: [{ path: "list", element: <DescriptionList /> }],
+      },
+      { path: "*", element: <p>ERROR-PAGE</p> },
     ],
   },
-  { path: "userfile", element: <UserFile /> },
-  { path: "description:id/*", element: <Description /> },
   { path: "*", element: <p>ERROR-PAGE</p> },
 ];
 
-export const descriptionRouterConfig = [
-  { path: "list", element: <DescriptionList /> },
-];
+// export const leftSideRouterConfig =
+
+// export const descriptionRouterConfig = [
+//   { path: "list", element: <DescriptionList /> },
+// ];
 
 // export const passwordRouterConfig = [
 //   { path: "change", element: <PasswordChange /> },
