@@ -2,7 +2,7 @@ import translate from "@/i18nProvider/translate";
 import CommonModelForm from "@/components/commonModelForm/CommonModelForm";
 import { TreeSelect } from "antd";
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link, Outlet} from "react-router-dom";
 import UserPasswordRouter from "@/router/home/userManage/userPassword/userPasswordRouter";
 const { SHOW_PARENT } = TreeSelect;
 export default function UserPassword() {
@@ -113,7 +113,8 @@ export default function UserPassword() {
         <Link to={"/home/userManage/userPassword/change"}>修改密码</Link>
         <Link to={"/home/userManage/userPassword/reset"}>重置密码</Link>
       </p>
-      <UserPasswordRouter></UserPasswordRouter>
+      {/* <UserPasswordRouter></UserPasswordRouter> */}
+      <Outlet />
     </>
   );
 }

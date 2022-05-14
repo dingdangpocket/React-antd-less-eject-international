@@ -18,16 +18,18 @@ const App = (props: Props) => {
     })();
   }, []);
   const renderRoutes = (routes: any): any => {
-   return routes.map((item: any,index:number) => {
-      // if (item && item.children) {
-      //   return (
-      //     <Route path={item.path} element={item.element} key={index}>
-      //       {renderRoutes(item.children)}
-      //     </Route>
-      //   );
-      // } else {
-        return <Route path={item.path} element={item.element} key={index}></Route>;
-      // }
+    return routes.map((item: any, index: number) => {
+      if (item && item.children) {
+        return (
+          <Route path={item.path} element={item.element} key={index}>
+            {renderRoutes(item.children)}
+          </Route>
+        );
+      } else {
+        return (
+          <Route path={item.path} element={item.element} key={index}></Route>
+        );
+      }
     });
   };
   // const data = [

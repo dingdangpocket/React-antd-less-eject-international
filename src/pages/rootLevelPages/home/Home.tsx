@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import styles from "./Home.module.less";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import LeftSideRouter from "@/router/home/leftSideRouter/leftSideRouter";
 import { I18nPropvider, LOCALES } from "@/i18nProvider";
 
@@ -138,7 +138,8 @@ export default function Home(props:any) {
                   minHeight: 280,
                 }}
               >
-                <LeftSideRouter></LeftSideRouter>
+                {/* <LeftSideRouter></LeftSideRouter> */}
+                <Outlet />
               </Content>
             </Layout>
           </Layout>

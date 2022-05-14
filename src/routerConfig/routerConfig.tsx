@@ -70,15 +70,15 @@ export const rootRouterConfig = [
     element: <Login />,
   },
   {
-    path: "/home/*",
+    path: "/home",
     element: <Home />,
     children: [
       {
-        path: "/*",
+        path: "*",
         element: <Navigate to={"/home/userManage/userPassword"} />,
       },
       {
-        path: "userManage/userPassword/*",
+        path: "userManage/userPassword",
         element: <UserPassword />,
         children: [
           { path: "change", element: <p>修改密码</p> },
@@ -86,7 +86,7 @@ export const rootRouterConfig = [
         ],
       },
       {
-        path: "userManage/userInfo/*",
+        path: "userManage/userInfo",
         element: <UserInfo />,
         children: [
           {
@@ -100,19 +100,19 @@ export const rootRouterConfig = [
         ],
       },
       {
-        path: "computerManage/computerInfo/*",
+        path: "computerManage/computerInfo",
         element: <ComputerInfo />,
       },
       {
-        path: "computerManage/computerDevice/*",
+        path: "computerManage/computerDevice",
         element: <ComputerDevice />,
       },
       {
-        path: "notifyManage/notifyInfo/*",
+        path: "notifyManage/notifyInfo",
         element: <NotifyInfo />,
       },
       {
-        path: "notifyManage/notifyData/*",
+        path: "notifyManage/notifyData",
         element: <NotifyData />,
       },
       { path: "*", element: <p>ERROR-PAGE</p> },
