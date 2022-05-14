@@ -5,7 +5,9 @@ export default function RootRouter() {
     <>
       <Routes>
         {rootRouterConfig.map((item: any, index: number) => {
-          return <Route path={item.path} element={item.element} key={index}></Route>;
+          return (
+            <Route path={item.path} element={item.element} key={index}></Route>
+          );
         })}
       </Routes>
     </>
