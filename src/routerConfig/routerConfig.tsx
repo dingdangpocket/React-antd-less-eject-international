@@ -19,7 +19,6 @@ export const rootRouterConfig = [
         element: <UserPassword />,
         children: [
           { path: "change", element: <PasswordChange /> },
-          { path: "delete", element: <PasswordChange /> },
         ],
       },
       { path: "userfile", element: <UserFile /> },

@@ -112,7 +112,7 @@ export default function UserPassword() {
       <p>
         <Link to={"/home/password/change"}>修改密码</Link>
       </p>
-      <Routes>
+      {/* <Routes>
         {rootRouterConfig.map((item) => {
           if (item.path === "password/*"&&item.children) {
             return item.children.map((options)=>{
@@ -120,7 +120,7 @@ export default function UserPassword() {
             })
           }
         })}
-      </Routes>
+      </Routes> */}
     </>
   );
 }

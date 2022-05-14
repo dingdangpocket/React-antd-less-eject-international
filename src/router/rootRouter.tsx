@@ -5,8 +5,7 @@ export default function RootRouter() {
     <>
       <Routes>
         {rootRouterConfig.map((item: any, index: number) => {
-          delete item.children;
-          return <Route {...item} key={index}></Route>;
+          return <Route path={item.path} element={item.element} key={index}></Route>;
         })}
       </Routes>
     </>
