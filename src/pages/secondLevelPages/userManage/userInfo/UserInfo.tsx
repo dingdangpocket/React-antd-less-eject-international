@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserFile() {
+export default function UserInfo() {
   return (
     <div>用户资料</div>
   )

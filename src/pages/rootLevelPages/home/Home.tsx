@@ -7,7 +7,7 @@ import {
 import styles from "./Home.module.less";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LeftSideRouter from "@/router/home/leftSideRouter";
+import LeftSideRouter from "@/router/home/leftSideRouter/leftSideRouter";
 import { I18nPropvider, LOCALES } from "@/i18nProvider";
 
 export default function Home() {
@@ -33,8 +33,8 @@ export default function Home() {
       key: "2",
       icon: LaptopOutlined,
       children: [
-        { title: "电脑信息", key: "2-1" },
-        { title: "电脑资料", key: "2-2" },
+        { title: "电脑资料", key: "2-1" },
+        { title: "电脑设备", key: "2-2" },
       ],
     },
     {
@@ -67,7 +67,7 @@ export default function Home() {
       navigate("/home/password");
     }
     if (key === "1-2") {
-      navigate("/home/userfile");
+      navigate("/home/userInfo");
     }
     if (key === "2-1") {
       navigate(`/home/description${189221}`);

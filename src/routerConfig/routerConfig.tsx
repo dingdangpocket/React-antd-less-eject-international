@@ -1,7 +1,7 @@
-import Home from "@/pages/home/Home";
-import Login from "@/pages/login/Login";
+import Home from "@/pages/rootLevelPages/home/Home";
+import Login from "@/pages/rootLevelPages/login/Login";
 import Description from "@/pages/secondLevelPages/description/Description";
-import UserFile from "@/pages/secondLevelPages/userManage/userFile/UserFile";
+import UserInfo from "@/pages/secondLevelPages/userManage/userInfo/UserInfo";
 import UserPassword from "@/pages/secondLevelPages/userManage/userPassword/UserPassword";
 import DescriptionList from "@/pages/thirdLevelPages/description-list/DescriptionList";
 import PasswordChange from "@/pages/thirdLevelPages/password-change/PasswordChange";
@@ -23,7 +23,7 @@ export const rootRouterConfig = [
           { path: "reset", element: <PasswordReset /> },
         ],
       },
-      { path: "userfile", element: <UserFile /> },
+      { path: "userInfo", element: <UserInfo/> },
       {
         path: "description:id/*",
         element: <Description />,
