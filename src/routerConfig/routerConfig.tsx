@@ -70,7 +70,11 @@ export const rootRouterConfig = [
     element: <Login />,
   },
   {
-    path: "/home",
+    path: "login",
+    element: <Login />,
+  },
+  {
+    path: "home",
     element: <Home />,
     children: [
       {
@@ -81,8 +85,9 @@ export const rootRouterConfig = [
         path: "userManage/userPassword",
         element: <UserPassword />,
         children: [
-          { path: "change", element: <p>修改密码</p> },
-          { path: "reset", element: <p>重置密码</p> },
+          { path: "change", element: <p>修改密码页面</p> },
+          { path: "reset", element: <p>重置密码页面</p> },
+          { path: "fingerprint", element: <p>指纹密码页面</p> },
         ],
       },
       {

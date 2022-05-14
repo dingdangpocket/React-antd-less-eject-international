@@ -7,7 +7,6 @@ import {
 import styles from "./Home.module.less";
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import LeftSideRouter from "@/router/home/leftSideRouter/leftSideRouter";
 import { I18nPropvider, LOCALES } from "@/i18nProvider";
 
 export default function Home(props:any) {
@@ -138,7 +137,6 @@ export default function Home(props:any) {
                   minHeight: 280,
                 }}
               >
-                {/* <LeftSideRouter></LeftSideRouter> */}
                 <Outlet />
               </Content>
             </Layout>

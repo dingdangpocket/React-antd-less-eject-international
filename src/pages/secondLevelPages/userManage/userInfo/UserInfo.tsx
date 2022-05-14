@@ -1,6 +1,5 @@
 // import UserInfoRouter from '@/router/home/userManage/userInfo/userInfoRouter'
 import React from "react";
-import UserInfoRouter from "@/router/home/userManage/userInfo/userInfoRouter";
 import { Link, Outlet } from "react-router-dom";
 
 export default function UserInfo() {
@@ -12,7 +11,6 @@ export default function UserInfo() {
         <Link to={`/home/userManage/userInfo/avator${100}`}>头像详情</Link>
       </p>
       <Outlet />
-      {/* <UserInfoRouter></UserInfoRouter> */}
     </div>
   );
 }

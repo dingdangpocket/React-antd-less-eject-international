@@ -2,8 +2,7 @@ import translate from "@/i18nProvider/translate";
 import CommonModelForm from "@/components/commonModelForm/CommonModelForm";
 import { TreeSelect } from "antd";
 import { useState } from "react";
-import { Link, Outlet} from "react-router-dom";
-import UserPasswordRouter from "@/router/home/userManage/userPassword/userPasswordRouter";
+import { Link, Outlet } from "react-router-dom";
 const { SHOW_PARENT } = TreeSelect;
 export default function UserPassword() {
   const treeData = [
@@ -110,10 +109,25 @@ export default function UserPassword() {
       </CommonModelForm>
       <p> {translate("国际化测试")}</p>
       <p>
-        <Link to={"/home/userManage/userPassword/change"}>修改密码</Link>
-        <Link to={"/home/userManage/userPassword/reset"}>重置密码</Link>
+        <Link
+          style={{ margin: "10px" }}
+          to={"/home/userManage/userPassword/change"}
+        >
+          进入修改密码
+        </Link>
+        <Link
+          style={{ margin: "10px" }}
+          to={"/home/userManage/userPassword/reset"}
+        >
+          进入重置密码
+        </Link>
+        <Link
+          style={{ margin: "10px" }}
+          to={"/home/userManage/userPassword/fingerprint"}
+        >
+          进入指纹密码
+        </Link>
       </p>
-      {/* <UserPasswordRouter></UserPasswordRouter> */}
       <Outlet />
     </>
   );
