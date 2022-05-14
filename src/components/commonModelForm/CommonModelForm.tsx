@@ -6,11 +6,14 @@ export type Props = {
   closeModel: () => void;
   getModelFormValues: (values: any) => void;
   formOptions: any;
+  children: any;
 };
 
 export default function CommonModelForm(props: Props) {
-  const { visiable, closeModel, getModelFormValues, formOptions } = props;
+  const { visiable, closeModel, getModelFormValues, formOptions, children } =
+    props;
   console.log(formOptions);
+  console.log(children);
   const formRef = createRef<any>();
   const handleCancel = () => {
     closeModel();
@@ -40,10 +43,11 @@ export default function CommonModelForm(props: Props) {
           }}
           autoComplete="off"
         >
-          {formOptions.formItems.map((item: any) => {
+          {formOptions.formItems.map((item: any, index: any) => {
             if (item.type === "input") {
               return (
                 <Form.Item
+                  key={index}
                   label={item.label}
                   name={item.name}
                   rules={[
@@ -60,6 +64,7 @@ export default function CommonModelForm(props: Props) {
             if (item.type === "checkbox") {
               return (
                 <Form.Item
+                  key={index}
                   name={item.name}
                   valuePropName="checked"
                   wrapperCol={{
@@ -70,7 +75,7 @@ export default function CommonModelForm(props: Props) {
                   <Checkbox>{item.tip}</Checkbox>
                 </Form.Item>
               );
-            }
+            } else return "";
           })}
         </Form>
       </Modal>
