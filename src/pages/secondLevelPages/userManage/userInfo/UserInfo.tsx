@@ -8,7 +8,8 @@ export default function UserInfo() {
     <div>
       用户资料
       <p>
-        <Link to={`/home/userManage/userInfo/detail:${100}`}>详情</Link>
+        <Link to={`/home/userManage/userInfo/detail${100}`}>资料详情</Link>
+        <Link to={`/home/userManage/userInfo/avator${100}`}>头像详情</Link>
       </p>
       <UserInfoRouter></UserInfoRouter>
     </div>

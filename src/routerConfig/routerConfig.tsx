@@ -6,6 +6,7 @@ import NotifyData from "@/pages/secondLevelPages/notifyManage/notifyData/NotifyD
 import NotifyInfo from "@/pages/secondLevelPages/notifyManage/notifyInfo/NotifyInfo";
 import UserInfo from "@/pages/secondLevelPages/userManage/userInfo/UserInfo";
 import UserPassword from "@/pages/secondLevelPages/userManage/userPassword/UserPassword";
+import AvatorDetail from "@/pages/thirdLevelPages/home-userManage-userInfo/avatorDetail/AvatorDetail";
 import UserDetail from "@/pages/thirdLevelPages/home-userManage-userInfo/userDetail/UserDetail";
 
 import { Navigate } from "react-router-dom";
@@ -30,26 +31,27 @@ export const rootRouterConfig = [
       },
       {
         path: "userManage/userInfo/*",
-        element:<UserInfo/>,
+        element: <UserInfo />,
         children: [
-          { path: "detail:id", element:<UserDetail/>},
+          { path: "detail:id", element: <UserDetail /> },
+          { path: "avator:id", element: <AvatorDetail /> },
         ],
       },
       {
         path: "computerManage/computerInfo/*",
-        element:<ComputerInfo/>,
+        element: <ComputerInfo />,
       },
       {
         path: "computerManage/computerDevice/*",
-        element:<ComputerDevice/>,
+        element: <ComputerDevice />,
       },
       {
         path: "notifyManage/notifyInfo/*",
-        element: <NotifyInfo/>,
+        element: <NotifyInfo />,
       },
       {
         path: "notifyManage/notifyData/*",
-        element: <NotifyData/>,
+        element: <NotifyData />,
       },
       { path: "*", element: <p>ERROR-PAGE</p> },
     ],
