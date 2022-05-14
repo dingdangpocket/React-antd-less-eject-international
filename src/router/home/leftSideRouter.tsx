@@ -5,9 +5,7 @@ export default function LeftSideRouter() {
   const leftSideRouterConfig:any = useMemo(() => {
     const leftSideRouter=rootRouterConfig.find(x =>  x.path === "/home/*")
     return leftSideRouter
-  }, []);
-  console.log("leftSideRouterConfig",leftSideRouterConfig);
-  
+  }, []); 
   return (
     <>
       <Routes>
