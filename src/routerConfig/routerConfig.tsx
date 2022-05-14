@@ -14,20 +14,34 @@ export const rootRouterConfig = [
     path: "/home/*",
     element: <Home />,
     children: [
-      { path: "/*", element: <Navigate to={"/home/password"} /> },
+      { path: "/*", element: <Navigate to={"/home/userManage/userPassword"} /> },
       {
-        path: "password/*",
-        element: <UserPassword />,
+        path: "userManage/userPassword/*",
+        element: <p>用户密码</p>,
         children: [
-          { path: "change", element: <PasswordChange /> },
-          { path: "reset", element: <PasswordReset /> },
+          { path: "change", element:<p>修改密码</p>},
+          { path: "reset", element: <p>重置密码</p>},
         ],
       },
-      { path: "userInfo", element: <UserInfo/> },
       {
-        path: "description:id/*",
-        element: <Description />,
-        children: [{ path: "list", element: <DescriptionList /> }],
+        path: "userManage/userInfo/*",
+        element: <p>用户资料</p>,
+      },
+      {
+        path: "computerManage/computerInfo/*",
+        element: <p>电脑资料</p>,
+      },
+      {
+        path: "computerManage/computerDevice/*",
+        element: <p>电脑设备</p>,
+      },
+      {
+        path: "notifyManage/notifyInfo/*",
+        element: <p>通知信息</p>,
+      },
+      {
+        path: "notifyManage/notifyData/*",
+        element: <p>通知资料</p>,
       },
       { path: "*", element: <p>ERROR-PAGE</p> },
     ],

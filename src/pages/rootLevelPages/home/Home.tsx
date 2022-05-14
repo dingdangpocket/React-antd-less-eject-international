@@ -60,19 +60,29 @@ export default function Home() {
     };
   });
   useEffect(() => {
-    navigate("/home/password");
+    navigate("/home/userManage/userPassword");
   }, []);
   const checkHandle = ({ item, key, keyPath, domEvent }: any) => {
     if (key === "1-1") {
-      navigate("/home/password");
+      navigate("/home/userManage/userPassword");
     }
     if (key === "1-2") {
-      navigate("/home/userInfo");
+      navigate("/home/userManage/userInfo");
     }
     if (key === "2-1") {
-      navigate(`/home/description${189221}`);
+      navigate(`/home/computerManage/computerInfo`);
+    }
+    if (key === "2-2") {
+      navigate(`/home/computerManage/computerDevice`);
+    }
+    if (key === "3-1") {
+      navigate(`/home/notifyManage/notifyInfo`);
+    }
+    if (key === "3-2") {
+      navigate(`/home/notifyManage/notifyData`);
     }
     console.log(key);
+    
   };
   const [locale, setLocale] = useState(LOCALES.CHINESE);
   return (
