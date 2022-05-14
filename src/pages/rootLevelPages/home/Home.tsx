@@ -24,7 +24,10 @@ export default function Home() {
       icon: UserOutlined,
       key: "1",
       children: [
-        { title: "用户密码", key: "1-1" },
+        {
+          title: "用户密码",
+          key: "1-1",
+        },
         { title: "用户资料", key: "1-2" },
       ],
     },
@@ -82,7 +85,6 @@ export default function Home() {
       navigate(`/home/notifyManage/notifyData`);
     }
     console.log(key);
-    
   };
   const [locale, setLocale] = useState(LOCALES.CHINESE);
   return (

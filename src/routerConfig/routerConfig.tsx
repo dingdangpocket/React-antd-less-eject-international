@@ -14,13 +14,16 @@ export const rootRouterConfig = [
     path: "/home/*",
     element: <Home />,
     children: [
-      { path: "/*", element: <Navigate to={"/home/userManage/userPassword"} /> },
+      {
+        path: "/*",
+        element: <Navigate to={"/home/userManage/userPassword"} />,
+      },
       {
         path: "userManage/userPassword/*",
-        element: <p>用户密码</p>,
+        element: <UserPassword />,
         children: [
-          { path: "change", element:<p>修改密码</p>},
-          { path: "reset", element: <p>重置密码</p>},
+          { path: "change", element: <p>修改密码</p> },
+          { path: "reset", element: <p>重置密码</p> },
         ],
       },
       {

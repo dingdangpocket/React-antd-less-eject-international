@@ -6,7 +6,7 @@ export default function UserPasswordRouter() {
   const userPasswordRouterConfig: any = useMemo(() => {
     const userPasswordRouter = rootRouterConfig
       .find((x) => x.path === "/home/*")
-      ?.children?.find((x) => x.path === "password/*");
+      ?.children?.find((x) => x.path === "userManage/userPassword/*");
     return userPasswordRouter;
   }, []);
 

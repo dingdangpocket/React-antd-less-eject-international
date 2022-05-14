@@ -110,8 +110,8 @@ export default function UserPassword() {
       </CommonModelForm>
       <p> {translate("国际化测试")}</p>
       <p>
-        <Link to={"/home/password/change"}>修改密码</Link>
-        <Link to={"/home/password/reset"}>重置密码</Link>
+        <Link to={"/home/userManage/userPassword/change"}>修改密码</Link>
+        <Link to={"/home/userManage/userPassword/reset"}>重置密码</Link>
       </p>
       <UserPasswordRouter></UserPasswordRouter>
     </>
