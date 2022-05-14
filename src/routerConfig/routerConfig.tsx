@@ -4,7 +4,8 @@ import Description from "@/pages/secondLevelPages/description/Description";
 import UserFile from "@/pages/secondLevelPages/userManage/userFile/UserFile";
 import UserPassword from "@/pages/secondLevelPages/userManage/userPassword/UserPassword";
 import DescriptionList from "@/pages/thirdLevelPages/description-list/DescriptionList";
-import PasswordChange from "@/pages/thirdLevelPages/password-Change/PasswordChange";
+import PasswordChange from "@/pages/thirdLevelPages/password-change/PasswordChange";
+import PasswordReset from "@/pages/thirdLevelPages/password-reset/PasswordReset";
 import { Navigate } from "react-router-dom";
 
 export const rootRouterConfig = [
@@ -19,6 +20,7 @@ export const rootRouterConfig = [
         element: <UserPassword />,
         children: [
           { path: "change", element: <PasswordChange /> },
+          { path: "reset", element: <PasswordReset /> },
         ],
       },
       { path: "userfile", element: <UserFile /> },

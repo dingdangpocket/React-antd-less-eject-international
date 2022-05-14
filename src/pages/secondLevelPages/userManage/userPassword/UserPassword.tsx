@@ -112,6 +112,7 @@ export default function UserPassword() {
       <p> {translate("国际化测试")}</p>
       <p>
         <Link to={"/home/password/change"}>修改密码</Link>
+        <Link to={"/home/password/reset"}>重置密码</Link>
       </p>
       <UserPasswordRouter></UserPasswordRouter>
     </>
