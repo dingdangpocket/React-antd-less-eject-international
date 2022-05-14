@@ -13,9 +13,9 @@ ReactDOM.render(
   <Provider store={store}>
     <ContextProvider>
       <Router>
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}> */}
           <App name="DingDang" />
-        </Suspense>
+        {/* </Suspense> */}
       </Router>
     </ContextProvider>
   </Provider>,
