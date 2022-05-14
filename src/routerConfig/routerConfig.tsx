@@ -1,11 +1,13 @@
 import Home from "@/pages/rootLevelPages/home/Home";
 import Login from "@/pages/rootLevelPages/login/Login";
-import Description from "@/pages/secondLevelPages/description/Description";
+import ComputerDevice from "@/pages/secondLevelPages/computerManage/computerDevice/ComputerDevice";
+import ComputerInfo from "@/pages/secondLevelPages/computerManage/computerInfo/ComputerInfo";
+import NotifyData from "@/pages/secondLevelPages/notifyManage/notifyData/NotifyData";
+import NotifyInfo from "@/pages/secondLevelPages/notifyManage/notifyInfo/NotifyInfo";
 import UserInfo from "@/pages/secondLevelPages/userManage/userInfo/UserInfo";
 import UserPassword from "@/pages/secondLevelPages/userManage/userPassword/UserPassword";
-import DescriptionList from "@/pages/thirdLevelPages/description-list/DescriptionList";
-import PasswordChange from "@/pages/thirdLevelPages/password-change/PasswordChange";
-import PasswordReset from "@/pages/thirdLevelPages/password-reset/PasswordReset";
+import UserDetail from "@/pages/thirdLevelPages/home-userManage-userInfo/userDetail/UserDetail";
+
 import { Navigate } from "react-router-dom";
 
 export const rootRouterConfig = [
@@ -28,23 +30,26 @@ export const rootRouterConfig = [
       },
       {
         path: "userManage/userInfo/*",
-        element: <p>用户资料</p>,
+        element:<UserInfo/>,
+        children: [
+          { path: "detail:id", element:<UserDetail/>},
+        ],
       },
       {
         path: "computerManage/computerInfo/*",
-        element: <p>电脑资料</p>,
+        element:<ComputerInfo/>,
       },
       {
         path: "computerManage/computerDevice/*",
-        element: <p>电脑设备</p>,
+        element:<ComputerDevice/>,
       },
       {
         path: "notifyManage/notifyInfo/*",
-        element: <p>通知信息</p>,
+        element: <NotifyInfo/>,
       },
       {
         path: "notifyManage/notifyData/*",
-        element: <p>通知资料</p>,
+        element: <NotifyData/>,
       },
       { path: "*", element: <p>ERROR-PAGE</p> },
     ],
