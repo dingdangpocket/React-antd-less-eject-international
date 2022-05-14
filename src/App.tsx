@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Routes } from "react-router-dom";
 import request from "./http/request";
 import RootRouter from "./router/rootRouter";
 interface Props {
@@ -16,6 +17,7 @@ const App = (props: Props) => {
   return (
     <>
       <RootRouter></RootRouter>
+      {/* <Routes><Routes/> */}
     </>
   );
 };

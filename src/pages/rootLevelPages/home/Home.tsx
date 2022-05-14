@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import LeftSideRouter from "@/router/home/leftSideRouter/leftSideRouter";
 import { I18nPropvider, LOCALES } from "@/i18nProvider";
 
-export default function Home() {
+export default function Home(props:any) {
   let navigate = useNavigate();
   const { Header, Content, Sider } = Layout;
   const items1 = ["1", "2", "3"].map((key) => ({
