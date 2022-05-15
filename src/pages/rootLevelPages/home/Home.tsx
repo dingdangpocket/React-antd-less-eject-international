@@ -5,23 +5,17 @@ import {
   NotificationOutlined,
 } from "@ant-design/icons";
 import styles from "./Home.module.less";
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { I18nPropvider, LOCALES } from "@/i18nProvider";
-import { ContentContext } from "@/context/ContextProvider";
+import useRouterAuth from "@/commonHooks/useRouterAuth";
 
 export default function Home(props: any) {
-  const { state} = useContext(ContentContext);
   let navigate = useNavigate();
   let location = useLocation();
-  console.log("登陆账号路由权限列表", state.routerPermissions);
-  const routerAuth: boolean = state.routerPermissions.find(
-    (x: string) => x === location.pathname
-  )
-    ? true
-    : false;
-  if (!routerAuth) {
-    navigate("/login");
+  const { AuthResult } = useRouterAuth(location.pathname);
+  if (!AuthResult) {
+    navigate("/error");
   }
   const { Header, Content, Sider } = Layout;
   const items1 = ["1", "2", "3"].map((key) => ({

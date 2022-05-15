@@ -1,6 +1,5 @@
 import { Navigate } from "react-router-dom";
 import Loadable from "react-loadable";
-
 const LoadingTip = () => <div>加载路由ing...</div>;
 const Login = Loadable({
   loader: () => import("@/pages/rootLevelPages/login/Login"),
@@ -127,7 +126,8 @@ export const rootRouterConfig:RoutesItems[]  = [
       { path: "*", element: <p>ERROR-PAGE</p> },
     ],
   },
-  { path: "*", element: <p>ERROR-PAGE</p> },
+  { path: "*", element: <p>ERROR-PAGE;</p> },
+  { path: "error", element: <p>ERROR-PAGE-对不起-您没有该路由权限;</p> },
 ];
 
 // import Home from "@/pages/rootLevelPages/home/Home";
