@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 // axios.defaults.baseURL = "https://api.apiopen.top";
 var mountNode = document.getElementById("root");
 ReactDOM.render(

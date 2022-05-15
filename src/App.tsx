@@ -1,11 +1,19 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import request from "./http/request";
 import { rootRouterConfig, RoutesItems } from "@/routerConfig/routerConfig";
+import { ContentContext } from "./context/ContextProvider";
 interface Props {
   name: string;
 }
 const App = (props: Props) => {
+  const { state, dispatch } = useContext(ContentContext);
+  //api...
+  useEffect(() => {
+    dispatch({type:"userRouterPermissions",payload:['/home/computerManage/computerInfo','/home/userManage/userPassword']});
+  }, []);
+  console.log(state);
+
   useEffect(() => {
     // renderRoutes(rootRouterConfig);
     void (async () => {

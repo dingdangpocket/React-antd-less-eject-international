@@ -20,6 +20,11 @@ const reducer = (state:any, action:any) => {
           ...state,
           colorValue: action.color,
         };
+      case "userRouterPermissions":
+        return {
+          ...state,
+          routerPermissions:action.payload
+        }
       default:
         return state;
     }
@@ -28,6 +33,7 @@ const reducer = (state:any, action:any) => {
 export const ContextProvider=({children}:ContentProps)=>{
     const [state, dispatch] = useReducer(reducer,{
         colorValue:"",
+        routerPermissions:""
     });
     return (
         <ContentContext.Provider value={{state,dispatch}}>
