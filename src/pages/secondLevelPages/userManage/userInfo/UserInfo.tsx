@@ -1,6 +1,6 @@
 // import UserInfoRouter from '@/router/home/userManage/userInfo/userInfoRouter'
 import { Link, Outlet } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import enUS from "antd/lib/locale/en_US";
 import zhCN from "antd/lib/locale/zh_CN";
 import moment from "moment";

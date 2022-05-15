@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
-
 import { LOCALES } from './constants';
 import messages from './messages';
 
