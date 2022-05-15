@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 import Loadable from "react-loadable";
 
-const LoadingTip = () => <div>懒加载路由ing...</div>;
+const LoadingTip = () => <div>加载路由ing...</div>;
 const Login = Loadable({
   loader: () => import("@/pages/rootLevelPages/login/Login"),
   loading: LoadingTip,
@@ -62,8 +62,13 @@ const NotifyData = Loadable({
     import("@/pages/secondLevelPages/notifyManage/notifyData/NotifyData"),
   loading: LoadingTip,
 });
+export type RoutesItems = {
+  path: string;
+  element: React.ReactElement;
+  children?: RoutesItems[];
+};
 
-export const rootRouterConfig = [
+export const rootRouterConfig:RoutesItems[]  = [
   {
     path: "/",
     element: <Login />,

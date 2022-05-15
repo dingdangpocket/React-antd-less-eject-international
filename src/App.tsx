@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import request from "./http/request";
-import { rootRouterConfig } from "@/routerConfig/routerConfig";
+import { rootRouterConfig, RoutesItems } from "@/routerConfig/routerConfig";
 interface Props {
   name: string;
 }
@@ -15,9 +15,9 @@ const App = (props: Props) => {
       console.log("请求结果", user);
     })();
   }, []);
-  
-  const renderRoutes = (routes: any): any => {
-    return routes.map((item: any, index: number) => {
+
+  const renderRoutes = (routes: RoutesItems[]) => {
+    return routes.map((item: RoutesItems, index: number) => {
       if (item && item.children) {
         return (
           <Route path={item.path} element={item.element} key={index}>

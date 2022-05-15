@@ -11,7 +11,6 @@ export type countActionType = {
 };
 
 export default function reducer(state = 10, action: countActionType) {
-  // switch里面一定要有default默认值，返回默认state，程序初始化就会执行reducer
   switch (action.type) {
     case "increment":
       return {
