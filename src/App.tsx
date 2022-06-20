@@ -1,7 +1,7 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import request from "./http/request";
-import { rootRouterConfig, RoutesItems } from "@/routerConfig/routerConfig";
+import { RoutesItems } from "@/routerConfig/routerConfig";
 import { ContentContext } from "./context/ContextProvider";
 interface Props {
   name: string;
@@ -10,9 +10,15 @@ const App = (props: Props) => {
   const { state, dispatch } = useContext(ContentContext);
   //api...
   useEffect(() => {
-    dispatch({type:"userRouterPermissions",payload:['/home/computerManage/computerInfo','/home/userManage/userPassword']});
+    dispatch({
+      type: "userRouterPermissions",
+      payload: [
+        "/home/computerManage/computerInfo",
+        "/home/userManage/userPassword",
+      ],
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(state);
 
   useEffect(() => {
     // renderRoutes(rootRouterConfig);
@@ -41,7 +47,7 @@ const App = (props: Props) => {
   };
   return (
     <>
-      <Routes>{renderRoutes(rootRouterConfig)}</Routes>
+      <Routes>{renderRoutes(state.routerConfig)}</Routes>
     </>
   );
 };

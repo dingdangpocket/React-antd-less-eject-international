@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import Loadable from "react-loadable";
+import { useState } from "react";
 const LoadingTip = () => <div>加载路由ing...</div>;
 const Login = Loadable({
   loader: () => import("@/pages/rootLevelPages/login/Login"),
@@ -66,8 +67,7 @@ export type RoutesItems = {
   element: React.ReactElement;
   children?: RoutesItems[];
 };
-
-export const rootRouterConfig:RoutesItems[]  = [
+export const rootRouterConfig: RoutesItems[] = [
   {
     path: "/",
     element: <Login />,
@@ -129,51 +129,4 @@ export const rootRouterConfig:RoutesItems[]  = [
   { path: "*", element: <p>ERROR-PAGE;</p> },
   { path: "error", element: <p>ERROR-PAGE-对不起-您没有该路由权限;</p> },
 ];
-
-// import Home from "@/pages/rootLevelPages/home/Home";
-// import Login from "@/pages/rootLevelPages/login/Login";
-// import ComputerDevice from "@/pages/secondLevelPages/computerManage/computerDevice/ComputerDevice";
-// import ComputerInfo from "@/pages/secondLevelPages/computerManage/computerInfo/ComputerInfo";
-// import NotifyData from "@/pages/secondLevelPages/notifyManage/notifyData/NotifyData";
-// import NotifyInfo from "@/pages/secondLevelPages/notifyManage/notifyInfo/NotifyInfo";
-// import UserInfo from "@/pages/secondLevelPages/userManage/userInfo/UserInfo";
-// import UserPassword from "@/pages/secondLevelPages/userManage/userPassword/UserPassword";
-// import AvatorDetail from "@/pages/thirdLevelPages/home-userManage-userInfo/avatorDetail/AvatorDetail";
-// import UserDetail from "@/pages/thirdLevelPages/home-userManage-userInfo/userDetail/UserDetail";
-//no lazy()
-
-// const Login = lazy(() => import("@/pages/rootLevelPages/login/Login"));
-// const Home = lazy(() => import("@/pages/rootLevelPages/home/Home"));
-// const ComputerDevice = lazy(
-//   () =>
-//     import("@/pages/secondLevelPages/computerManage/computerInfo/ComputerInfo")
-// );
-// const ComputerInfo = lazy(
-//   () =>
-//     import("@/pages/secondLevelPages/computerManage/computerInfo/ComputerInfo")
-// );
-// const NotifyData = lazy(
-//   () => import("@/pages/secondLevelPages/notifyManage/notifyData/NotifyData")
-// );
-// const NotifyInfo = lazy(
-//   () => import("@/pages/secondLevelPages/notifyManage/notifyInfo/NotifyInfo")
-// );
-// const UserInfo = lazy(
-//   () => import("@/pages/secondLevelPages/userManage/userInfo/UserInfo")
-// );
-// const UserPassword = lazy(
-//   () => import("@/pages/secondLevelPages/userManage/userPassword/UserPassword")
-// );
-// const AvatorDetail = lazy(
-//   () =>
-//     import(
-//       "@/pages/thirdLevelPages/home-userManage-userInfo/avatorDetail/AvatorDetail"
-//     )
-// );
-// const UserDetail = lazy(
-//   () =>
-//     import(
-//       "@/pages/thirdLevelPages/home-userManage-userInfo/userDetail/UserDetail"
-//     )
-// );
-//suspense.lazy()
+// eslint-disable-next-line react-hooks/rules-of-hooks

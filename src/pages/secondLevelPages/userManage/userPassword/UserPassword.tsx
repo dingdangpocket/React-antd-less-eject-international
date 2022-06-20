@@ -1,8 +1,10 @@
 import translate from "@/i18nProvider/translate";
 import CommonModelForm from "@/components/commonModelForm/CommonModelForm";
 import { TreeSelect } from "antd";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Dynamic from "@/pages/rootLevelPages/dynamic/Dynamic";
+import { ContentContext } from "@/context/ContextProvider";
 const { SHOW_PARENT } = TreeSelect;
 export default function UserPassword() {
   const treeData = [
@@ -43,6 +45,7 @@ export default function UserPassword() {
   ];
 
   const [visiable, setVisiable] = useState(false);
+  
   const [formOptions] = useState({
     modelTitle: "新增文件",
     formItems: [
@@ -60,6 +63,8 @@ export default function UserPassword() {
       },
     ],
   });
+
+  const { state, dispatch } = useContext(ContentContext);
   const showModel = () => {
     setVisiable(true);
   };
@@ -73,13 +78,26 @@ export default function UserPassword() {
     console.log(value);
   };
 
-  // const filterTreeNode = (inputValue: string, treeNode: any) => {
-  //   return treeNode.title.indexOf(inputValue) !== -1;
-  // };
-
+  const addRouter = () => {
+    dispatch({
+      type: "userRouterConfig",
+      payload: [
+        ...state.routerConfig,
+        {
+          path: "dynamic",
+          element: <Dynamic />,
+        },
+      ],
+    }); 
+    console.log(state.routerConfig);
+  };
   return (
     <>
       <div>用户密码</div>
+      <button onClick={() => addRouter()}>追加路由addRouter</button>
+      <Link style={{ margin: "10px" }} to={"/dynamic"}>
+        进入追加路由
+      </Link>
       <TreeSelect
         showSearch
         showCheckedStrategy={SHOW_PARENT}
