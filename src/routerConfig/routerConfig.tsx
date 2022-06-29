@@ -98,11 +98,11 @@ export const rootRouterConfig: RoutesItems[] = [
         element: <UserInfo />,
         children: [
           {
-            path: "detail:id",
+            path: "detail",
             element: <UserDetail />,
           },
           {
-            path: "avator:id",
+            path: "avator",
             element: <AvatorDetail />,
           },
         ],

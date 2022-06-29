@@ -43,8 +43,8 @@ export default function UserInfo() {
         </ConfigProvider>
       </div>
       <p>
-        <Link to={`/home/userManage/userInfo/detail${100}`}>资料详情</Link>
-        <Link to={`/home/userManage/userInfo/avator${100}`}>头像详情</Link>
+        <Link to={`/home/userManage/userInfo/detail?id=${100}`}>资料详情</Link>
+        <Link to={`/home/userManage/userInfo/avator?id=${100}`}>头像详情</Link>
       </p>
       <Outlet />
     </div>

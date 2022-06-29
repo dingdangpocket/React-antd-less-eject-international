@@ -91,6 +91,7 @@ export default function UserPassword() {
     }); 
     console.log(state.routerConfig);
   };
+  //动态路由追加;
   return (
     <>
       <div>用户密码</div>

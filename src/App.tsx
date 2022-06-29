@@ -15,9 +15,15 @@ const App = (props: Props) => {
       payload: [
         "/home/computerManage/computerInfo",
         "/home/userManage/userPassword",
+        "/home/userManage/userInfo",
+        "/home/userManage/userInfo/detail",
+        "/home/computerManage/computerInfo",
+        "/home/computerManage/computerDevice",
+        "/home/notifyManage/notifyInfo",
+        "/home/notifyManage/notifyData",
       ],
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
